@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
@@ -57,3 +58,7 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+=======
+# Location-App
+Location Distance Finder A Laravel-based location application that uses Google Maps APIs to provide:  Google Places Autocomplete for Pickup and Drop location search Google Distance Matrix API to calculate distance and estimated travel time Google Maps Route View to display the route between locations
+>>>>>>> 6dcc4fc6fc610ef9e824a2c8b257ce11ec11bf4c

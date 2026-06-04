@@ -1,64 +1,128 @@
-<<<<<<< HEAD
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+Location Distance Finder
+A Laravel-based location application that uses Google Maps APIs to provide:
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Google Places Autocomplete for Pickup and Drop location search
+Google Distance Matrix API to calculate distance and estimated travel time
+Google Maps Route View to display the route between locations
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+🛠️ Tech Stack
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Backend: PHP 8.2, Laravel 12
+Frontend: HTML, CSS, JavaScript
+APIs: Google Maps JavaScript API, Google Places API, Google Distance Matrix API
+Database: MySQL
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
+✅ Requirements
+Make sure you have the following installed:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+PHP >= 8.2
+Composer
+MySQL (XAMPP or Laragon)
+Google API Keys (Maps + Distance Matrix)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+🚀 Installation & Setup
+Step 1: Clone the Repository
+bashgit clone https://github.com/Alok199810/location-app.git
+cd location-app
+Step 2: Install Dependencies
+bashcomposer install
+Step 3: Copy Environment File
+bashcp .env.example .env
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Windows users: use this instead:
+cmdcopy .env.example .env
 
-### Premium Partners
+Step 4: Generate App Key
+bashphp artisan key:generate
+Step 5: Configure .env File
+Open .env and update the following:
+envAPP_NAME=LocationApp
+APP_ENV=local
+APP_DEBUG=true
+APP_URL=http://127.0.0.1:8000
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=location_app
+DB_USERNAME=root
+DB_PASSWORD=
 
-## Contributing
+GOOGLE_MAPS_KEY=your_google_maps_api_key_here
+GOOGLE_MATRIX_KEY=your_google_distance_matrix_api_key_here
+Step 6: Create Database
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Open phpMyAdmin → http://localhost/phpmyadmin
+Create a new database named location_app
 
-## Code of Conduct
+Step 7: Run Migrations
+bashphp artisan migrate
+Step 8: Start the Server
+bashphp artisan serve
+Open your browser and go to:
+http://127.0.0.1:8000
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+🔑 Google API Keys Setup
+You need 2 API keys from Google Cloud Console:
+KeyPurposeGOOGLE_MAPS_KEYMaps JavaScript API + Places AutocompleteGOOGLE_MATRIX_KEYDistance Matrix API
+Enable these APIs in Google Cloud Console:
 
-## Security Vulnerabilities
+Go to APIs & Services Library
+Enable Maps JavaScript API
+Enable Places API
+Enable Distance Matrix API
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
+📸 Features
+FeatureDescription🔍 AutocompleteGoogle Places Autocomplete on both Pickup & Drop fields📏 DistanceReal distance calculated via Distance Matrix API⏱️ Travel TimeEstimated driving time between locations🗺️ Route MapVisual route displayed on Google Map
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-=======
-# Location-App
-Location Distance Finder A Laravel-based location application that uses Google Maps APIs to provide:  Google Places Autocomplete for Pickup and Drop location search Google Distance Matrix API to calculate distance and estimated travel time Google Maps Route View to display the route between locations
->>>>>>> 6dcc4fc6fc610ef9e824a2c8b257ce11ec11bf4c
+📁 Project Structure
+location-app/
+├── app/
+│   └── Http/
+│       └── Controllers/
+│           └── LocationController.php   # Main controller
+├── resources/
+│   └── views/
+│       └── location.blade.php           # Main view (map + form)
+├── routes/
+│   └── web.php                          # App routes
+├── .env.example                         # Environment template
+└── README.md
+
+🌐 Routes
+MethodURLDescriptionGET/Main page with mapPOST/calculateCalculate distance via API
+
+⚠️ Common Issues
+REQUEST_DENIED error:
+
+Make sure all 3 Google APIs are enabled in Cloud Console
+Check API key restrictions are set to None for testing
+
+ExpiredKeyMapError:
+
+Your Google API key has expired — generate a new one
+
+composer not recognized:
+
+Download Composer from https://getcomposer.org
+Make sure PHP is added to your system PATH
+
+Sessions table not found:
+
+Run php artisan migrate
+Or set SESSION_DRIVER=file in .env
+
+
+👨‍💻 Author
+
+Name: Alok
+Email: itsalok119@gmail.com
+
+
+
+📄 License
+This project is open-source and available under the MIT License.
